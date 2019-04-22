@@ -1,0 +1,37 @@
+perspective = {
+  "root": {
+    "id": "2c00f",
+    "contextId": "5cd59",
+    "view": "initiative",
+    "name": "default",
+    "head": "ab500"
+  },
+
+  "commits": {
+    "ab500": {
+      "id": "ab500",
+      "content": {
+        "data": "8253a",
+        "links": {
+          "a231c": {
+            "id": "a231c",
+            "order": {},
+            "type": "perspective"
+          },
+          "ddeb0": {
+            "id": "ddeb0",
+            "order": {},
+            "type": "perspective"
+          },
+        }
+      }
+    }
+  },
+
+  "data": {
+    "8253a": {
+      "text": "Initiative 1",
+      "description": "Initiative 1 is about saving the amazon forest"
+    }
+  }
+}
