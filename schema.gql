@@ -43,7 +43,7 @@ type Content {
   id: ID!
 
   # Hard links
-  data: ID!
+  data: ID
   # Hard links
   links: [Link!]!
 }
@@ -52,7 +52,9 @@ type Content {
 union Linkable = Perspective | Commit
 
 type Link {
+  name: String!
   position: JSON
+  writable: Boolean
   link: Linkable! 
 }
 
