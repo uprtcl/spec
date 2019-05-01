@@ -1,0 +1,21 @@
+scalar JSON
+
+type Lens {
+  element: String!
+  params: JSON
+}
+
+# Example formats: calendar, todo-list...
+type Format {
+  format: String!
+  default: Lens!
+  available: [Lens!]!
+}
+
+# Every format must have a default lens and an available list of lens
+# Each user can override the default lens for any format, or override the lens for a given CID
+
+type Query {
+  lens(agent: ID!, cid: ID!): Lens
+  format(format: String!): Format
+}
