@@ -1,16 +1,34 @@
+<p align="center">
+  <a href="https://www.uprtcl.io">
+    <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/sticker1.png" alt="The Underscore Protocol" width="400" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/uprtcl/web-components"><img src="https://img.shields.io/badge/Frontend-Web%20Components-yellow.svg?style=flat-square" /></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/uprtcl/eth-uprtcl"><img src="https://img.shields.io/badge/%20Provider-Ethereum-brightgreen.svg?style=flat-square" /></a>
+  <a href="https://github.com/uprtcl/hc-uprtcl"><img src="https://img.shields.io/badge/%20Provider-Holochain-yellow.svg?style=flat-square" /></a>
+  <a href="https://github.com/uprtcl/java-uprtcl"><img src="https://img.shields.io/badge/%20Provider-Spring%20Boot-brightgreen.svg?style=flat-square" /></a>
+</p>
+
+<br/>
+
 # The Underscore Protocol (_Prtcl)
 
-The _Prtcl uses the **internal data schema of Git** to link content together and adapts it to work with ideas instead of code.
+The \_Prtcl uses the **internal data schema of Git** to link content together and adapts it to work with ideas instead of code.
 
-With the _Prtcl, any piece of content can be mutated by anyone, on any platform, while still keeping references to its origin and links to other existing versions of that content. 
+With the \_Prtcl, any piece of content can be mutated by anyone, on any platform, while still keeping references to its origin and links to other existing versions of that content. 
 
-Just like GIT, the _Prtcl encourages divergence and personal perspectives, while facilitating convergence and agreement.
+Just like GIT, the \_Prtcl encourages divergence and personal perspectives, while facilitating convergence and agreement.
 
 Content that is created with the _Prtcl becomes alive. It can grow and evolve forever, independently of its creator, independently of its platform.
 
 ## Spec
 
-Creating _prtcl-compatible content is as simple as creating three (3) small support objects/identifiers every time **a brand new piece of content** is created (if its not brand-new, but a mutation, not all tree need to be created).
+Creating \_prtcl-compatible content is as simple as creating three (3) small support objects/identifiers every time **a brand new piece of content** is created (if its not brand-new, but a mutation, not all tree need to be created).
 
 These are the three support objects:
 
@@ -20,7 +38,7 @@ The commit object links a piece of content to its previous version. It needs a l
 
 ### Perspectives
 
-Perspectives is how git "branches" are called in the _Prtcl. Perspectives represent independently evolving "versions" of a piece of content.
+Perspectives is how git "branches" are called in the \_Prtcl. Perspectives represent independently evolving "versions" of a piece of content.
 
 A perspective is one "named" tip of the DAG of commits. You can create/**branch** new perspectives out of existing ones and you can **merge** changes made on a perpective into another one.
 
@@ -28,11 +46,13 @@ Perspectives are **NOT** content-addressable. The perspective identifier must be
 
 ### Contexts
 
-Contexts are how git "repositories" are called in the _Prtcl. On its most basic form, Contexts are just a string that multiple Perspectives use to represent the fact that they are perspectives of the same "thing", the same "context".
+Contexts are how git "repositories" are called in the \_Prtcl. On its most basic form, Contexts are just a string that multiple Perspectives use to represent the fact that they are perspectives of the same "thing", the same "context".
 
 ## Core Data Schema
 
-The objects below show the minimum structure that _prtcl-compatible objects MUST include. The value of each property is of type `string` or `Array<string>`, but the type listed is an Object name to show that the `string` value MUST be an identifier of an object of *that* type .
+The objects below show the minimum structure that \_prtcl-compatible objects MUST include. The value of each property is of type `string` or `Array<string>`, but the type listed is an Object name to show that the `string` value MUST be an identifier of an object of *that* type .
+
+### Schema
 
 ```
 Commit {
@@ -48,9 +68,20 @@ Perspective {
 }
 ```
 
+### Diagram 
+
+The figure below shows how the Commit, the Perspective and the Context objects/identifiers relate to each other an to a pice of data.
+
+<p align="center">
+  <a href="https://www.uprtcl.io">
+    <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/_prtcl-core-objects.png" alt="The Underscore Protocol" width="400" />
+  </a>
+</p>
+<br/>
+
 ## Suggested Extended Data Schema
 
-A *suggested* data schema for _prtcl-compatible objects is provided below. It adds metadata to the Commit and Perspective objects that help applications and users work with these objects. It also proposes a standard way to compute the Context identifiers.
+A *suggested* data schema for \_prtcl-compatible objects is provided below. It adds metadata to the Commit and Perspective objects that help applications and users work with these objects. It also proposes a standard way to compute the Context identifiers.
 
 ### Commit
 
@@ -90,7 +121,7 @@ Perspective {
   creator: string;
   timestamp: number;
   context: Context;
-  name: string;
+  name: string; 
   head: Commit;       // excluded for id computation
 }
 ```
