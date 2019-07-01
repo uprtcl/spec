@@ -16,7 +16,7 @@ These are the three support objects:
 
 ### Commits
 
-The commit object links a piece of content to its previous version. It needs a link to the content and a link to its parent commit. Commit MUST be content-addressable. Linked commits build a directed acylic graph (DAG).
+The commit object links a piece of content to its previous version. It needs a link to the content and a link to its parent commit. Commits MUST be content-addressable. Linked commits build a directed acylic graph (DAG).
 
 ### Perspectives
 
@@ -106,13 +106,3 @@ Context {
   nonce: number;
 }
 ```
-
-
-
-
-
-
-
-
-
-
