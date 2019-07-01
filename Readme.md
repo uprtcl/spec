@@ -76,21 +76,22 @@ Because a perspective head must not be content-addressale, the `origin` property
 
 - A URL of a webserver API `https://www.collectiveone.org/uprtcl`
 - An address of a blockchain smart contract. `eth://0x1a5c29c94D03C4c8f7414564CBD57295d61e898f`
-- An IPFS OrbitDb `log` or Textile `thread` identifier wich helps deriving the latest head.
+- An IPFS OrbitDb `log` or Textile `thread` identifier that helps deriving the latest head.
 
 In addition, the perspective identifier SHOULD be content-addressable of at least its `origin`, but **without** including its head id. This way the origin of a perspective can be trusted from its id.
 
-Its possible that the perspective metadata (its origin, creator, etc) is stored in one content-addressable platform, while the perspective head is stored in another platform that supports non-content-addressable shared data identifiers.
+Its possible that the perspective metadata (its origin, creator, etc) is stored in a content-addressable platform, while the perspective head is stored in another platform that supports non-content-addressable shared data identifiers.
 
+This is the extended Perspective object specification.
 
 ```
 Perspective {
-  origin: string;
+  origin: string;     
   creator: string;
   timestamp: number;
   context: Context;
   name: string;
-  head: Commit;
+  head: Commit;       // excluded for id computation
 }
 ```
 
