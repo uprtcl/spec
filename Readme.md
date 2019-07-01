@@ -74,7 +74,7 @@ The figure below shows how the Commit, the Perspective and the Context objects/i
 
 <p align="center">
   <a href="https://www.uprtcl.io">
-    <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/_prtcl-core-objects.png" alt="The Underscore Protocol" width="400" />
+    <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/_prtcl-core-objects.png" alt="The Underscore Protocol" width="700" />
   </a>
 </p>
 <br/>
