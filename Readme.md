@@ -16,11 +16,11 @@ These are the three support objects:
 
 ### Commits
 
-The commit object links a piece of content to its previous version. It needs a link to the content and a link to its parent commit. Commit IDs MUST be are content-addressable. Linked commits build a directed acylic graph (DAG).
+The commit object links a piece of content to its previous version. It needs a link to the content and a link to its parent commit. Commit MUST be content-addressable. Linked commits build a directed acylic graph (DAG).
 
 ### Perspectives
 
-Perspectives is how git "branches" are called in the _Prtcl but they are otherwise identical: they represent independently evolving "versions" of a piece of content.
+Perspectives is how git "branches" are called in the _Prtcl. Perspectives represent independently evolving "versions" of a piece of content.
 
 A perspective is one "named" tip of the DAG of commits. You can create/**branch** new perspectives out of existing ones and you can **merge** changes made on a perpective into another one.
 
@@ -28,11 +28,11 @@ Perspectives are **NOT** content-addressable. The perspective identifier must be
 
 ### Contexts
 
-Contexts are how git "repositories" are called in the _Prtcl. Its just a string that multiple Perspectives use to represent the fact that they are perspectives of the same "thing", the same "context".
+Contexts are how git "repositories" are called in the _Prtcl. On its most basic form, Contexts are just a string that multiple Perspectives use to represent the fact that they are perspectives of the same "thing", the same "context".
 
 ## Core Data Schema
 
-The objects below show the minimum structure that _prtcl-compatible objects MUST include. The value of each property is of type `string` or `Array<string>`, but the type included below is an Object name to show that the `string` value MUST be an identifier of an object of *that* type .
+The objects below show the minimum structure that _prtcl-compatible objects MUST include. The value of each property is of type `string` or `Array<string>`, but the type listed is an Object name to show that the `string` value MUST be an identifier of an object of *that* type .
 
 ```
 Commit {
@@ -48,7 +48,7 @@ Perspective {
 }
 ```
 
-## Rich Data Schema
+## Suggested Extended Data Schema
 
 A *suggested* data schema for _prtcl-compatible objects is provided below. It adds metadata to the Commit and Perspective objects that help applications and users work with these objects. It also proposes a standard way to compute the Context identifiers.
 
