@@ -70,7 +70,7 @@ Perspective {
 
 ### Diagram 
 
-The figure below shows how the Commit, the Perspective and the Context objects/identifiers relate to each other an to a pice of data.
+The figure below shows how the Commit, the Perspective and the Context objects/identifiers relate to each other and to the data object.
 
 <p align="center">
   <a href="https://www.uprtcl.io">
