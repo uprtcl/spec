@@ -5,7 +5,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/uprtcl/web-components"><img src="https://img.shields.io/badge/Frontend-Web%20Components-yellow.svg?style=flat-square" /></a>
+  <a href="https://github.com/uprtcl/web-components"><img src="https://img.shields.io/badge/Frontend-Web%20Components-yellow.svg?style=flat-square" /></a> <a href="https://demo.uprtcl.io"><img src="https://img.shields.io/badge/Demo-Text Editor-yellow.svg?style=flat-square" /></a>
+  
+  
 </p>
 
 <p align="center">
