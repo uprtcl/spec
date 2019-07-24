@@ -16,6 +16,40 @@ graph BT
   end
 ```
 
+The _Prtcl JS library is a set of modules that help app developers make their apps _prtcl-compatible. 
+
+Being _prtcl-compatible implies that some or all of the "pieces of content" of the app are handled as _prtcl contexts and:
+
+1. Each context can evolves as a sequence of commits.
+2. Each context can have more the one perspective.
+3. One perspective of a context can be merged into another one.
+4. Contexts can be linked with other contexts to build more complex information structures, which are by all means also contexts and, thus, can have perspectives, can be merged and can be linked too.
+5. Perspectives of one context can live in diferent platforms.
+6. One context (perspective) can be linked to other context (perspective) that lives in a different platforms.
+
+## What is a context
+
+The first step to make your app _prtcl-compatible is to define what are the "pieces of content" of which your app is made of and start thinking of them as _prtcl contexts. 
+
+For the _prtcl, a "piece of content" can be any JSON object, and thus can have any arbitrary *internal* structure. This means that a piece of content can be, for example, a single word, a paragraph or a single image, or, it can be an entire document made of words, paragraphs and images.
+
+The important thing to keep into account is that the *internal* elements of a context cannot be _prtcl contexts too, and, thus, cannot evolve independently with their own perspectives. Any change to an internal property represents a new version of that context and needs to be commited.
+
+Instead, in order to have complex data structures that are contexts and are made of other (sub)contexts, these subcontexts need to be linked instead of being internal. 
+
+Links can point to a specific perspective or commit of another context. 
+
+- links that point to a perspective are called soft and dont require a new commit on the parent context for each commit of the child context. 
+- links that point to a commit are called hard and are frozen links that will require a new commit (new link) on the parent context to be updated.
+
+Some examples of how contexts can be used to build complex data structures are described below
+
+- A document: TBD
+- A kanban board: TBD
+- A calendar: TBD
+
+##
+
 - Micro-orchestrator: UI management layer
   - StoreModule
   - ReduxModule
