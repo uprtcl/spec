@@ -48,6 +48,12 @@ Some examples of how contexts can be used to build complex data structures are d
 - A kanban board: TBD
 - A calendar: TBD
 
+## _Prtcl stack
+
+As an app developer, your focus is on the data. The _Prcl JS Library provides a set of modules that will handle the contexts your app uses. 
+
+_Prtcl contexts however, are not just any piece of content. Context can have other perspectives that are not controlled by you and that are stored on places you cant control, and you may or may not want to 
+
 ##
 
 - Micro-orchestrator: UI management layer
