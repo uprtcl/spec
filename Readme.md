@@ -20,13 +20,15 @@
 
 # The Underscore Protocol (_Prtcl)
 
-The \_Prtcl uses the **internal data schema of Git** to link content together and adapts it to work with ideas instead of code.
+The _Prtcl is a simple set of rules for creating, linking, evolving, branching and merging data objects on differnet platforms, by different users.
 
-With the \_Prtcl, any piece of content can be mutated by anyone, on any platform, while still keeping references to its origin and links to other existing versions of that content. 
+The \_Prtcl uses the **internal data schema of Git** and adapts it to work with ideas (linked data objects) instead of code.
+
+With the \_Prtcl, any object can be mutated by anyone, on any platform, while still keeping references to its origin and links to other existing versions of that content. 
 
 Just like GIT, the \_Prtcl encourages divergence and personal perspectives, while facilitating convergence and agreement.
 
-Content that is created with the _Prtcl becomes alive. It can grow and evolve forever, independently of its creator, independently of its platform.
+Objects created with the _Prtcl become alive. They can grow and evolve forever, independently of its creator, independently of its platform.
 
 ## Spec
 
@@ -126,20 +128,37 @@ Perspective {
 }
 ```
 
-## Structured and Linked Data
+## Linked Data
 
-The two significant differences between the _Prtcl and GIT is that the _Prtcl works with JSON objects instead of a folder of files, and that the _Prtcl is designed around these objects being linked among them.
+The two significant differences between the _Prtcl and GIT is that the _Prtcl works with JSON objects instead of a folder of files, and that the _Prtcl is designed around these objects being linked together.
 
-The data object can be any JSON object. The _Prtcl does not imposes its structure. 
-
-However, the actions of branching and merging do depend on the data structure. We provide libraries for branching and merging linked/nested objects which will be described later.
-
-One common use case of linking two objects/contexts is to have a soft link from the parent to the child that points to one _perspective_ of the child. Soft links remains the same even if the content of that perspective of the child object changes. 
+One common use case of linking objects/contexts is to have a soft link from the parent to the child that points to one _perspective_ of the child. The figure below shows how two contexts can be linked to one parent context using soft links.
 
 <p align="center">
   <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-linked-objects.png" alt="The Underscore Protocol" width="700" />
 </p>
 <br/>
+
+## Data Structure
+
+> This section is under construction
+
+The _Prtcl does not impose a structure to the JSON objects with which it works. However, some operations, like branching and merging, do depend on the data structure. The _Prtcl tools provide routines that help handle the most common cases, and let developers extend these to fit their own needs.
+
+## Service Providers
+
+> This section is under construction
+
+The _Prtcl is platform-agnostic, meaning that the objects can be stored on any platform, including a web-server, a blockchain or a distributed storage network like IPFS.
+
+## Context Rendering
+
+> This section is under construction
+
+Objects created with the _Prtcl can live on many platforms, be used by many apps, and be modified by many authors. 
+
+In this environment, having common and reusable tools to render contexts on a web-browser is considered a key aspect of the technology.
+
 
 ## Example - A Document
 
