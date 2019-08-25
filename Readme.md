@@ -75,9 +75,7 @@ Perspective {
 The figure below shows how the Commit, the Perspective and the Context objects/identifiers relate to each other and to the data object.
 
 <p align="center">
-  <a href="https://www.uprtcl.io">
-    <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/_prtcl-core-objects.png" alt="The Underscore Protocol" width="700" />
-  </a>
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/_prtcl-core-objects.png" alt="The Underscore Protocol" width="700" />
 </p>
 <br/>
 
@@ -103,7 +101,7 @@ Commit {
 
 Add author, timestamp and a custom "name" to a perspective. Add also the `origin` of the Perspective. 
 
-Because a perspective head must not be content-addressale, the `origin` property provides information about the "source of thrust" which will provide the the latest head commit id of *that* perspective.
+Because a perspective head must not be content-addressale, the `origin` property provides information about the "source of thrust" which will provide the latest head commit id of *that* perspective.
 
  Some examples of how the origin property COULD look are listed below:
 
@@ -113,7 +111,7 @@ Because a perspective head must not be content-addressale, the `origin` property
 
 In addition, the perspective identifier SHOULD be content-addressable of at least its `origin`, but **without** including its head id. This way the origin of a perspective can be trusted from its id.
 
-Its possible that the perspective metadata (its origin, creator, etc) is stored in a content-addressable platform, while the perspective head is stored in another platform that supports non-content-addressable shared data identifiers.
+It's possible that the perspective metadata (its origin, creator, etc) is stored in a content-addressable platform, while the perspective head is stored in another platform that supports non-content-addressable shared data identifiers.
 
 This is the extended Perspective object specification.
 
@@ -128,14 +126,78 @@ Perspective {
 }
 ```
 
-### Context
+## Structured and Linked Data
 
-To prevent context identifiers duplication and increase the value of a context by associating them to a person or entity, context identifiers are built from their author id and the current timestamp.
+The two significant differences between the _Prtcl and GIT is that the _Prtcl works with JSON objects instead of a folder of files, and that the _Prtcl is designed around these objects being linked among them.
+
+The data object can be any JSON object. The _Prtcl does not imposes its structure. 
+
+However, the actions of branching and merging do depend on the data structure. We provide libraries for branching and merging linked/nested objects which will be described later.
+
+One common use case of linking two objects/contexts is to have a soft link from the parent to the child that points to one _perspective_ of the child. Soft links remains the same even if the content of that perspective of the child object changes. 
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-linked-objects.png" alt="The Underscore Protocol" width="700" />
+</p>
+<br/>
+
+## Example - A Document
+
+As an example, consider how a simple document would be created and modified using GIT and how this would be different using the _Prtcl. 
+
+In GIT, the document would, most likely, live on a root folder storing also the database of the GIT repository. There would be one text file (for the first paragraph) and two subfolders (one for each subsection), each with its own text file for the content. 
+
+The folder structure in this example would be as follows
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/git-folder-structure.png" width="300" />
+</p>
+
+If a user wants to create a modification of the content of Section 1, he needs to branch the entire repository, updating the GIT repository database in the root folder, and then change the contents of the `Sit Ei.txt` file.
+
+This is how it would look:
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/git-doc-branch-example.png" width="700" />
+</p>
+
+
+In the case of the _Prtcl, each element of the document can be a context (and it's own repository), each context having, as data, a `TextNode` object with the following structure:
+
 
 ```
-Context {
-  creator: string;
-  timestamp: number;
-  nonce: number;
+TextNode {
+  text: string;
+  type: string;
+  links: Array<string>;
 }
 ```
+
+The figure below shows the graph of interconnected contexts (a total of six contexts shown in green) that build up the entire document. The sequence of commits for each context (in blue) and the new perspective/branch on the `SIT` context (in yellow) as perspective/branch on that context only, and not on the entire document `DOC1`.
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-doc-branch-example.png" width="700" />
+</p>
+ 
+The figure below shows the document structure in the  _Prtcl were each element is a virtual context. In this example, the `mutation` perspective (branch) applies only to the first paragraph of Section 1, and not to the entire document.
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-doc-branch-example-02.png" width="700" />
+</p>
+
+With the _Prtcl, it is now possible for the new perspective on the `SIT` context to be reused on another context, say, for example, another document `DOC2`, without losing the link with its origin within the `DOC1` context. 
+
+This link can be, eventually, used to bring back changes to the `SIT` context made in `DOC2` back into `DOC1`. Note that this link would be lost in the case the `DOC2` had been created as a new GIT repository.
+
+The figure below shows how the `mutation` perspective of the `SIT` context is reused in another context `DOC2` without losing the link with the original document.
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-docs-linked-example-02.png" width="700" />
+</p>
+
+And the figure below shows how two perspectives of the same contexts can live in two documents `DOC1` and `DOC2` at the same time.
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-docs-linked-example.png" width="700" />
+</p>
+
