@@ -201,3 +201,59 @@ And the figure below shows how two perspectives of the same contexts can live in
   <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-docs-linked-example.png" width="700" />
 </p>
 
+### New Perspective - Recursive Branching
+
+In the _Prtcl, branches are called perspectives and differ nothing with GIT branches: they are pointers to the latest commit (head) of that branch. 
+
+However, creating a new perspective in the _Prtcl is different from creating a new branch in GIT because contexts in the _Prtcl can be linked.
+
+How are links treated while creating a new perspective of a context depends on its data structure and possibly on the user preferences. 
+
+Here we provide an example of how new perspectives of documents could be created using a recursive branching strategy. In this example, the links on the parent context data are updated to point to the new perspectives of the child contexts.
+
+The figure below shows an example of a new global perspective of `DOC1`. Blue tags are the ids of the current perspectives for each context and point to their corresponding head commit (blue circles). 
+
+The global perspective operation creates a new perspective on `DOC1` (with new ids in yellow tags) and all of its subcontexts and adds a commit (yellow circles) to contexts with children (`DOC1`, `S1` and `S2` ), to update their “subcontexts links” to point to the new perspectives of their subcontexts.
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-global-perspective.png" width="700" />
+</p>
+
+The figure below shows the resulting document after having created a new global perspective of `DOC1`. The content remains the same although new perspectives and links among them have been created.
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-global-perspective-02.png" width="700" />
+</p>
+
+Note that, in the _Prtcl, perspectives are not identified by their names string as are branches in GIT, but have unique identifiers. More importantly, even if created together, the new perspectives of each of the subcontexts are actually independent of each other, being initially linked by the “subcontext link” committed to the parents, but not bounded to remain together or act together in any way other than that.
+
+In other words, the “yellow” and “blue” colors in the figures above are not actual categories of the data, but simply subjective interpretations that derive from the user experience.
+
+### Merge Two Perspectives - Recursive Context-based Merging
+
+Merges in the _Prtcl treat differently the data of a context than its links to subcontexts, even if both are part of a commit object.
+
+In the case of a `TextNode`, the text property is merged either automatically or manually by accepting/rejecting modifications. 
+
+However, for each link (child element) of the "to" parent `TextNode`, if there is a link to a perspective **of that same context** in the "from" parent `TextNode`, instead of updating the link of the "to" parent to point to the child perspective of the "from" parent, those two child perspectives (of the same context) are merged recursively, leaving the link of the "to" parent untouched.
+
+The figure below shows the state before doing a global merge of `DOC1:c1285` into `DOC1:a231c`. The data set by each commit (that changes the data of a context) is marked with gray tags and a table of the data is provided on the right.
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-global-merge-01.png" width="700" />
+</p>
+
+The figure below shows the state after having done the global merge of `DOC1:c1285` into `DOC1:a231c`.
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-global-merge-02.png" width="700" />
+</p>
+
+And the figure below shows the document view both perspectives and the result of their merge.
+
+<p align="center">
+  <img src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-global-merge-03.png" width="700" />
+</p>
+
+
+
