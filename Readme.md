@@ -67,8 +67,9 @@ Commit {
 
 ```
 Perspective {
-  head: Commit;
-  context: string;
+  origin: string; // inmutable
+  head: Commit; // mutable
+  context: string; // mutable
 }
 ```
 
