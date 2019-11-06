@@ -20,7 +20,7 @@
 
 # The Underscore Protocol (_Prtcl)
 
-The _Prtcl is a simple set of rules for creating, linking, evolving, branching and merging data objects on differnet platforms, by different users.
+The _Prtcl is a simple set of rules for creating, linking, evolving, branching and merging data objects on different platforms, by different users.
 
 The \_Prtcl uses the **internal data schema of Git** and adapts it to work with ideas (linked data objects) instead of code.
 
