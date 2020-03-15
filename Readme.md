@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/uprtcl/web-components"><img src="https://img.shields.io/badge/Frontend-Web%20Components-yellow.svg?style=flat-square" /></a> <a href="https://demo.uprtcl.io"><img src="https://img.shields.io/badge/Demo-Text Editor-yellow.svg?style=flat-square" /></a>
+  <a href="https://github.com/uprtcl/js-uprtcl"><img src="https://img.shields.io/badge/Frontend%20Infrastructure-yellow.svg?style=flat-square" /></a> <a href="https://demo.uprtcl.io"><img src="https://img.shields.io/badge/Demo-Text Editor-yellow.svg?style=flat-square" /></a>
   
   
 </p>
@@ -13,7 +13,7 @@
 <p align="center">
   <a href="https://github.com/uprtcl/eth-uprtcl"><img src="https://img.shields.io/badge/%20Provider-Ethereum-brightgreen.svg?style=flat-square" /></a>
   <a href="https://github.com/uprtcl/hc-uprtcl"><img src="https://img.shields.io/badge/%20Provider-Holochain-yellow.svg?style=flat-square" /></a>
-  <a href="https://github.com/uprtcl/java-uprtcl"><img src="https://img.shields.io/badge/%20Provider-Spring%20Boot-brightgreen.svg?style=flat-square" /></a>
+  <a href="https://github.com/uprtcl/js-uprtcl-server"><img src="https://img.shields.io/badge/%20Provider-Spring%20Boot-brightgreen.svg?style=flat-square" /></a>
 </p>
 
 <br/>
