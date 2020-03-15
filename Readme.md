@@ -30,6 +30,8 @@ An Evee is a platform-agnostic object that:
 
 - Like Linked-Data, it can be reused, rendered and interacted with on different apps and platforms.
 
+Read more about our implementation of the protocol in our [documentation site](https://uprtcl.github.io/).
+
 ## Why _Prtcl
 
 The Web has evolved significantly since its original vision of linked hypertext documents. Instead of *web pages*, most of The Web is now made of *web applications*. 
