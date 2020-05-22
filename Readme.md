@@ -20,7 +20,7 @@
 
 # The Underscore Protocol (_Prtcl)
 
-The Underscore Protocol (_Prtcl) combines the core ideas behind The World Wide Web, GIT and Linked-Data into the concept of Evolving Entities, or “Evees”.
+The Underscore Protocol (_Prtcl) combines the core ideas behind The World Wide Web and GIT into the concept of Evolving Entities, or “Evees”.
 
 An Evee is a platform-agnostic object that:
 
@@ -28,7 +28,7 @@ An Evee is a platform-agnostic object that:
   
 - Like GIT repositories, it can have multiple “perspectives”: forks and mutations created and evolved by anyone, on any platform.
 
-- Like Linked-Data, it can be reused, rendered and interacted with on different apps and platforms.
+- It can be reused, rendered and interacted with on different apps and platforms.
 
 Read more about our implementation of the protocol in our [documentation site](https://uprtcl.github.io/).
 
