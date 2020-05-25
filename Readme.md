@@ -30,7 +30,7 @@ An Evee is a platform-agnostic object that:
 
 - It can be reused, rendered and interacted with on different apps and platforms.
 
-Read more about our implementation of the protocol in our [documentation site](https://uprtcl.github.io/).
+Read more about our implementation of the protocol in our [documentation site](https://uprtcl.github.io/js-uprtcl/).
 
 ## Why _Prtcl
 
