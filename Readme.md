@@ -118,7 +118,7 @@ These modules are especially well suited for web 3.0 applications in which user 
 
 ## Where to go from here
 
-To integrate a reusable Cortex module in your app see [`js-uprtcl` documentation](https://github.com/uprtcl/js-uprtcl/wiki).
+To integrate a reusable Cortex module in your app see [`js-uprtcl` documentation](https://uprtcl.github.io/js-uprtcl/guide/).
 
 
 
